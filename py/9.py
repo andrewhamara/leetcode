@@ -1,7 +1,8 @@
-# Author: Andrew Hamara
-
-# Solution to Leetcode problem 9: Palindrome Number
-
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        return str(x) == str(x)[::-1]
+        if x < 0: return False
+        temp,rev = x, 0
+        while temp:
+            rev = rev * 10 + (temp % 10)
+            temp //= 10
+        return rev == x
