@@ -5,8 +5,7 @@ class Solution {
       std::map<int,int> freq;
       for (int n : arr ) {
         freq[n]++;
-        int cur = freq[n];
-        if (float(cur) > qtr)
+        if (float(freq[n]) > qtr)
           return n;
       }
       return -1;
